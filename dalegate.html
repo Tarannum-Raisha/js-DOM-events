@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dalegate event </title>
+</head>
+<body>
+    <h1>Explore event dalegate </h1>
+    <section>
+        <ul id="list-container">
+            <li class="item-1">Lorem, ipsum.</li>
+            <li class="item-1">Voluptates, quasi?</li>
+            <li class="item-1">Quibusdam, quia.</li>
+            <li class="item-1">Optio, natus.</li>
+            <li class="item-1">Reprehenderit, laudantium!</li>
+            <li class="item-1">Odio, reiciendis.</li>
+        </ul>
+        <button id="btn-add-item">Add item</button>
+    </section>
+    <script>
+        // const items = document.getElementsByClassName('item-1');
+        // for(const item of items){
+        //     item.addEventListener('click',function(event){
+        //         // console.log(event.target.parentNode);
+        //         event.target.parentNode.removeChild(event.target);
+        //     })
+        // }
+
+       document.getElementById('list-container').addEventListener('click', function(event){
+        // console.log(event.target);
+            event.target.parentNode.removeChild(event.target);
+       })
+
+        document.getElementById('btn-add-item').addEventListener('click',function (){
+            const listContainer = document.getElementById('list-container');
+            const li = document.createElement('li');
+            li.innerText = 'It is a new item';
+            li.classList.add('item-1');
+            listContainer.appendChild(li);
+        })
+    </script>
+</body>
+</html>
